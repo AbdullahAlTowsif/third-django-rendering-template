@@ -72,11 +72,19 @@ Django provides built-in template filters to modify values dynamically.
 | `default` | Sets default value if variable is empty | `{{ name|default:'Guest' }}` |
 | `date` | Formats a datetime object | `{{ date|date:'Y-m-d' }}` |
 | `truncatechars` | Truncates text after given chars | `{{ description|truncatechars:50 }}` |
+| `add` | Adds a value to the variable | `{{ number|add:5 }}` |
+| `divisibleby` | Checks if a number is divisible | `{{ number|divisibleby:3 }}` |
+| `wordcount` | Counts words in a string | `{{ text|wordcount }}` |
+| `truncatewords` | Truncates text after given words | `{{ text|truncatewords:10 }}` |
+| `makelist` | Converts a string into a list | `{{ name|makelist }}` |
+| `join` | Joins list elements with a separator | `{{ list|join:', ' }}` |
 
 ### Example:
 ```django
 <p>{{ user.first_name|default:"Guest" }}</p>
 <p>{{ description|truncatechars:100 }}</p>
+<p>{{ price|add:10 }}</p>
+<p>{{ number|divisibleby:5 }}</p>
 ```
 
 ---

@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>We are inside Apps</h1>
-    <h1>Author Name: {{author}}</h1>
+    <h1>Author Name: {{name}}</h1>
     {% if age >= 18 %}
     <p>You can drive</p>
     {% else %}
@@ -38,7 +38,30 @@
                 <td>{{course.teacher}}</td>
             </tr>
             {% endfor %}
-        
     </table>
+    {% comment %} Filters in DTL {% endcomment %}
+    {% comment %} {{variable_name | filter_name}} {% endcomment %}
+    {% comment %}
+        Add Value
+        Divisible Check
+        Length
+        Word Count
+        Truncate Words
+        Make List
+        Upper Case
+        Lower Case
+        Join
+    {% endcomment %}
+     {% comment %} Don't use any space here {% endcomment %}
+     <h4>Add Value: {{marks | add:"1"}}</h4>
+     <h4>Divisible: {{marks | divisibleby:"1"}}</h4>
+     <h4>Length: {{name | length}}</h4>
+     <h4>Word Count: {{name | wordcount}}</h4>
+     <h4>Truncate Word: {{blog | truncatewords:7}}</h4>
+     <h4>Truncate Character: {{blog | truncatechars:27}}</h4>
+     <h4>Make List: {{name | make_list}}</h4>
+     <h4>Upper Case: {{name | upper}}</h4>
+     <h4>Lower Case: {{name | lower}}</h4>
+     <h4>Join: {{lst | join:", "}}</h4>
 </body>
 </html>
