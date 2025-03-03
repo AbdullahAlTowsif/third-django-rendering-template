@@ -8,5 +8,20 @@
 <body>
     <h1>We are inside Apps</h1>
     <h1>Author Name: {{author}}</h1>
+    {% if age >= 18 %}
+    <p>You can drive</p>
+    {% else %}
+    <p>You are an infant</p>
+    {% endif %}
+
+    {% if marks >= 80 %}
+    <p>Golden Duck</p>
+    {% elif marks >= 70 and marks <= 79 %}
+    <p>A Grade</p>
+    {% elif marks >= 40 and marks <= 69 %}
+    <p>Passed</p>
+    {% else %}
+    <p>Feltush Student</p>
+    {% endif %}
 </body>
 </html>
