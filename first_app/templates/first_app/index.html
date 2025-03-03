@@ -23,5 +23,22 @@
     {% else %}
     <p>Feltush Student</p>
     {% endif %}
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Courses</th>
+            <th>Teacher</th>
+        </tr>
+        
+            {% for course in courses %}
+            <tr>
+                <td>{{course.id}}</td>
+                <td>{{course.course}}</td>
+                <td>{{course.teacher}}</td>
+            </tr>
+            {% endfor %}
+        
+    </table>
 </body>
 </html>
