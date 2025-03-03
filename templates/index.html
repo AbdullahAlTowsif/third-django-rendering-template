@@ -11,6 +11,9 @@
 <body>
     <h1>This is my first ever template</h1>
     <a target="_blank" href="https://dramacool.bg/">This is a link</a>
+    {% static "images/tokyo-ghoul.jpg" as anime %}
     <img src="{% static "images/tokyo-ghoul.jpg" %}" alt="Tokyo Ghoul">
+    <img src="{{anime}}" alt="Tokyo Ghoul">
+    <img src="{% get_static_prefix %}images/naruto X jiraiya.jpeg " alt="Naruto">
 </body>
 </html>
