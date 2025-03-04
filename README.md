@@ -89,6 +89,34 @@ Django provides built-in template filters to modify values dynamically.
 
 ---
 
+## 4. Static Files in Templates
+
+### Case 1: Inside Application
+- We don't need to notify `settings.py` for static files and templates.
+
+### Case 2: Outside Application
+- We need to notify `settings.py` for static files and templates.
+
+#### Example Configuration in `settings.py`:
+```python
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [ BASE_DIR / "static" ]
+```
+
+### Loading Static Files in Templates
+For both cases, we need to load static files in templates using:
+```django
+{% load static %}
+```
+
+Example usage:
+```django
+<img src="{% static 'images/logo.png' %}" alt="Logo">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+```
+
+---
+
 ## Conclusion
-Django Template Language (DTL) provides powerful control structures such as `if-else`, `for loops`, and filters to dynamically render HTML content based on the context data passed from views.
+Django Template Language (DTL) provides powerful control structures such as `if-else`, `for loops`, filters, and static file handling to dynamically render HTML content based on the context data passed from views.
 
