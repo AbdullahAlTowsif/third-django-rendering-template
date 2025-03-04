@@ -115,6 +115,14 @@ Example usage:
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 ```
 
+### Using `get_static_prefix`
+When using `{% get_static_prefix %}`, do not add whitespace after the closing bracket.
+
+Example:
+```django
+<img src="{% get_static_prefix %}images/narutoXjiraiya.jpeg" alt="Naruto">
+```
+
 ---
 
 ## Conclusion
