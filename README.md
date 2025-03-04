@@ -125,6 +125,25 @@ Example:
 
 ---
 
+## 5. Media Files (Dynamic Files)
+Django requires explicit settings to handle media files.
+
+### TODO 1: Configure `settings.py`
+```python
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = 'media/'
+```
+
+### TODO 2: Configure `urls.py`
+```python
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
+---
+
 ## Conclusion
-Django Template Language (DTL) provides powerful control structures such as `if-else`, `for loops`, filters, and static file handling to dynamically render HTML content based on the context data passed from views.
+Django Template Language (DTL) provides powerful control structures such as `if-else`, `for loops`, filters, static files, and media file handling to dynamically render HTML content based on the context data passed from views.
 
